@@ -9,7 +9,7 @@
   </div>
   <div class="download_area" @click="download()">
     <div class="download_descriptions">
-      <div class="download_description">현재 버전: 1.0.0</div>
+      <div class="download_description">현재 버전: 1.0.1</div>
       <div class="download_description">- 아이템에 Ctrl+C 키를 눌러 시세를 즉시 확인할 수 있어요</div>
       <div class="download_description">- 거래 메시지가 오면 애드온으로 알려줘요</div>
       <div class="download_description">- 경매장에서 거래 메시지를 복사하면 손쉽게 붙여넣을 수 있어요.</div>
