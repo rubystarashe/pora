@@ -16,8 +16,8 @@
       <div class="download_description">- PoRA를 사용하는 유저 끼리라면 카카오 유저이더라도 거래 애드온에 표시되요</div>
       <div class="download_description">- 창고의 가치를 한눈에 파악할 수 있어요</div>
       <div class="download_description">- 비싼 아이템을 획득할시 자동으로 알려줘요</div>
-      <div class="download_description">이 애드온은 유저의 총 카오스 오브 개수에 대한 정보를 수집합니다.</div>
-      <div class="download_description">이 애드온은 유저의 계정명과 캐릭터명, 최근 이용한 캐릭터명을 수집합니다.</div>
+      <div class="download_description">이 애드온은 가계부 기능을 위해 유저의 총 카오스 오브 개수에 대한 정보를 수집합니다.</div>
+      <div class="download_description">이 애드온은 거래 애드온을 위해 유저의 계정명과 캐릭터명, 최근 이용한 캐릭터명을 수집합니다.</div>
       <div class="download_description">이 애드온은 서버 성능과 유지자금에 대한 문제로, 유저의 업로드 자원을 일부 사용할 수 있습니다.</div>
       <div class="download_description">이 애드온은 순수 독자적 커뮤니케이션 기능을 제외한 정보 이용으로는 수익창출 하지 않습니다.</div>
       <div class="download_description">이 애드온을 다운로드 하여 사용시 위의 모든 사항에 동의하는것으로 간주합니다.</div>
@@ -51,7 +51,7 @@ export default {
       help: false,
       done: false,
       filename: 'PoRA_1.0.0.exe',
-      torrentId: 'magnet:?xt=urn:btih:8e4d20700ba90a1829d9274f1268a28cd62bdf9b&dn=Path+of+RubystarAshe+Setup+1.0.0.exe&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com',
+      torrentId: 'magnet:?xt=urn:btih:baeb6d18a287b82f7702b2b79148660a04bac55f&dn=Path+of+RubystarAshe+Setup+1.0.0.exe&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com',
     }
   },
   methods: {
@@ -62,8 +62,8 @@ export default {
       setTimeout(() => !this.progress && !this.done ? this.help = true : null, 30000)
       const self = this
       window.torrent.on('download', e => {
-        self.progress = torrent.progress
-        self.downloadSpeed = torrent.downloadSpeed
+        self.progress = window.torrent.progress
+        self.downloadSpeed = window.torrent.downloadSpeed
       })
       window.torrent.add(this.torrentId, function(torrent) {
         torrent.files[0].getBlobURL(function(err, url) {
