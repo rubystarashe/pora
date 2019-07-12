@@ -32,7 +32,12 @@
       </div>
     </div>
   </div>
-  <div v-if="help && !progress">다운로드가 진행이 안되네요... 연락주세요!</div>
+  <div class="help_area" v-if="help && !progress">
+    <div class="help_box">
+      <div>다운로드가 진행이 안되시면 연락주세요!</div>
+      <div>디스코드 루비스타#4609</div>
+    </div>
+  </div>
 </div>
 </template>
 
@@ -184,5 +189,32 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.help_area {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+.help_box {
+  background: rgba(30,20,30,.9);
+  color: #ffbcbc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  padding: calc(1vh + 1vw);
+  font-size: calc(1vh + 1vw);
+  border-radius: calc(1vh + 1vw);
+}
+.help_box>div {
+  margin: calc(.3vh + .3vw);
 }
 </style>
