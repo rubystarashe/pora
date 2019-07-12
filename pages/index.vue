@@ -16,6 +16,7 @@
       <div class="download_description">- PoRA를 사용하는 유저 끼리라면 카카오 유저이더라도 거래 애드온에 표시되요</div>
       <div class="download_description">- 창고의 가치를 한눈에 파악할 수 있어요</div>
       <div class="download_description">- 비싼 아이템을 획득할시 자동으로 알려줘요</div>
+      <div class="download_description">- F1 ~ F12 키로 손쉽게 창고를 선택할 수 있어요</div>
       <div class="download_description">이 애드온은 가계부 기능을 위해 유저의 총 카오스 오브 개수에 대한 정보를 수집합니다.</div>
       <div class="download_description">이 애드온은 거래 애드온을 위해 유저의 계정명과 캐릭터명, 최근 이용한 캐릭터명을 수집합니다.</div>
       <div class="download_description">이 애드온은 서버 성능과 유지자금에 대한 문제로, 유저의 업로드 자원을 일부 사용할 수 있습니다.</div>
