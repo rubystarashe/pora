@@ -32,7 +32,7 @@
       </div>
     </div>
   </div>
-  <div class="help_area" v-if="help && !progress">
+  <div class="help_area" v-if="help && !progress && !done">
     <div class="help_box">
       <div>다운로드가 진행이 안되시면 연락주세요!</div>
       <div>디스코드 루비스타#4609</div>
