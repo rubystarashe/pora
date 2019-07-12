@@ -8,7 +8,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Path of Exile user addon' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/logo.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/pora/logo.ico' }
     ]
   },
   plugins: [

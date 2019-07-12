@@ -1,11 +1,30 @@
 <template>
 <div>
-  <div @click="download()">
-    <div v-if="!onstart">다운로드</div>
-    <div v-else-if="done">다됨 ㅇㅇ</div>
-    <div v-else>
-      <div v-if="!progress">다운로드를 준비중이에요</div>
-      <div>{{Math.floor(progress * 100)}}</div>
+  <div class="title_area">
+    <img class="title_logo" src="/pora/logo_big.png">
+    <div class="title_main">
+      <div class="title_main_title">Path of RubystarAshe</div>
+      <div class="title_main_description">패스 오브 엑자일 유저 애드온</div>
+    </div>
+  </div>
+  <div class="download_area" @click="download()">
+    <div class="download_descriptions">
+      <div class="download_description">현재 버전: 1.0.0</div>
+      <div class="download_description">- 아이템에 Ctrl+C 키를 눌러 시세를 즉시 확인할 수 있어요</div>
+      <div class="download_description">- 거래 메시지가 오면 애드온으로 알려줘요</div>
+      <div class="download_description">- 경매장에서 거래 메시지를 복사하면 손쉽게 붙여넣을 수 있어요.</div>
+      <div class="download_description">- PoRA를 사용하는 유저 끼리라면 카카오 유저이더라도 거래 애드온에 표시되요</div>
+      <div class="download_description">- 창고의 가치를 한눈에 파악할 수 있어요</div>
+      <div class="download_description">- 비싼 아이템을 획득할시 자동으로 알려줘요</div>
+    </div>
+    <div class="download_btn_area">
+      <div v-if="!onstart">1.0.0 다운로드</div>
+      <div v-else-if="done">다운로드 완료!</div>
+      <div v-else>
+        <div v-if="!progress">다운로드를 준비중이에요</div>
+        <div class="progress_bg" :style="{ width: Math.floor(progress * 100) + '%' }"/>
+        <div v-if="progress" class="progress">{{Math.floor(progress * 100)}}% {{bytesToSize(downloadSpeed || 0)}}/s</div>
+      </div>
     </div>
   </div>
   <div v-if="help && !progress">다운로드가 진행이 안되네요... 연락주세요!</div>
@@ -18,6 +37,7 @@ export default {
     return {
       onstart: false,
       progress: null,
+      downloadSpeed: null,
       help: false,
       done: false,
       filename: 'PoRA_1.0.0.exe',
@@ -29,10 +49,11 @@ export default {
       if (this.onstart) return null
       this.onstart = true
       this.progress = 0
-      setTimeout(() => !this.progress ? this.help = true : null, 30000)
+      setTimeout(() => !this.progress && !this.done ? this.help = true : null, 30000)
       const self = this
       window.torrent.on('download', e => {
         self.progress = torrent.progress
+        self.downloadSpeed = torrent.downloadSpeed
       })
       window.torrent.add(this.torrentId, function(torrent) {
         torrent.files[0].getBlobURL(function(err, url) {
@@ -44,7 +65,119 @@ export default {
           self.done = true
         })
       })
+    },
+    bytesToSize(bytes) {
+      var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+      if (bytes == 0) return '0 Byte';
+      var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
+      return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
     }
   }
 }
 </script>
+
+<style>
+body {
+  background: url('/pora/bg.png');
+  background-position: right top;
+  background-repeat:  no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  margin: 0;
+}
+.title_area {
+  position: fixed;
+  left: calc(2vh + 2vw);
+  top: calc(1.5vh + 1.5vw);
+  padding: calc(1vh + 1vw);
+  border-radius: calc(1vh + 1vw);
+  background: rgba(47,50,65,.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.title_logo {
+  height: calc(7vh + 7vw);
+  margin-right: calc(1.5vh + 1.5vw);
+}
+.title_main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.title_main_title {
+  font-size: calc(2vh + 2vw);
+  color:#ffeaf4;
+}
+.title_main_description {
+  color: #ffbcbc;
+  margin-top: calc(1vh + 1vw);
+  font-size: calc(.8vh + .8vw);
+}
+
+.download_area {
+  position: fixed;
+  right: calc(2vh + 2vw);
+  bottom: calc(1.5vh + 1.5vw);
+  padding: calc(1vh + 1vw);
+  border-radius: calc(1vh + 1vw);
+  background: rgba(47,50,65,.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.download_descriptions {
+  font-size: calc(.6vh + .6vw);
+  color: rgb(104,153,167);
+}
+.download_description {
+  margin: calc(.2vh + .2vw) 0;
+  transition: color .3s;
+}
+.download_description:hover {
+  color: rgb(159,234,249);
+}
+.download_btn_area {
+  position: relative;
+  margin-top: calc(1vh + 1vw);
+  color:#ffeaf4;
+  background: rgba(0, 0, 0, .5);
+  border-radius: calc(.5vh + .5vw);
+  padding: calc(.7vh + .7vw) calc(1vh + 1vw);
+  border: calc(.05vh + .05vw) solid #ffeaf4;
+  cursor: pointer;
+  transition: all .3s;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-width: calc(5vh + 5vw);
+  min-height: calc(1vh + 1vw);
+}
+.download_btn_area:hover {
+  background: rgba(0, 0, 0, .8);
+}
+.progress_bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  background: white;  
+}
+.progress {
+  position: absolute;
+  color: #ffbcbc;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>
