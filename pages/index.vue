@@ -23,7 +23,7 @@
       <div class="download_description">이 애드온을 다운로드 하여 사용시 위의 모든 사항에 동의하는것으로 간주합니다.</div>
     </div>
     <div class="download_btn_area">
-      <div v-if="!onstart">1.0.0 다운로드</div>
+      <div v-if="!onstart">1.0.1 다운로드</div>
       <div v-else-if="done">다운로드 완료!</div>
       <div v-else>
         <div v-if="!progress">다운로드를 준비중이에요</div>
@@ -50,8 +50,8 @@ export default {
       downloadSpeed: null,
       help: false,
       done: false,
-      filename: 'PoRA_1.0.0.exe',
-      torrentId: 'magnet:?xt=urn:btih:f8c7796f249708ed5b7b5d6e362736b0346742b9&dn=Path+of+RubystarAshe+Setup+1.0.0.exe&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com',
+      filename: 'PoRA_1.0.1.exe',
+      torrentId: 'magnet:?xt=urn:btih:50f3fdbc906bf53c6ba5f6ce30f2ca565c6e824c&dn=Path+of+RubystarAshe+Setup+1.0.1.exe&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com',
     }
   },
   methods: {
