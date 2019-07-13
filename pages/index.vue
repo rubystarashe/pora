@@ -9,7 +9,7 @@
   </div>
   <div class="download_area" @click="download()">
     <div class="download_descriptions">
-      <div class="download_description">현재 버전: 1.0.2</div>
+      <div class="download_description">현재 버전: 1.0.3</div>
       <div class="download_description">- 아이템에 Ctrl+C 키를 눌러 시세를 즉시 확인할 수 있어요</div>
       <div class="download_description">- 거래 메시지가 오면 애드온으로 알려줘요</div>
       <div class="download_description">- 경매장에서 거래 메시지를 복사하면 손쉽게 붙여넣을 수 있어요.</div>
@@ -19,12 +19,12 @@
       <div class="download_description">- F1 ~ F12 키로 손쉽게 창고를 선택할 수 있어요</div>
       <div class="download_description">이 애드온은 가계부 기능을 위해 유저의 총 카오스 오브 개수에 대한 정보를 수집합니다.</div>
       <div class="download_description">이 애드온은 거래 애드온을 위해 유저의 계정명과 캐릭터명, 최근 이용한 캐릭터명을 수집합니다.</div>
-      <div class="download_description">이 애드온은 서버 성능과 유지자금에 대한 문제로, 유저의 업로드 자원을 일부 사용할 수 있습니다.</div>
+      <div class="download_description">이 애드온은 서버 성능과 유지에 대한 문제로, 유저의 업로드 자원을 일부 사용할 수 있습니다.</div>
       <div class="download_description">이 애드온은 순수 독자적 커뮤니케이션 기능을 제외한 정보 이용으로는 수익창출 하지 않습니다.</div>
       <div class="download_description">이 애드온을 다운로드 하여 사용시 위의 모든 사항에 동의하는것으로 간주합니다.</div>
     </div>
     <div class="download_btn_area">
-      <div v-if="!onstart">1.0.2 다운로드</div>
+      <div v-if="!onstart">1.0.3 다운로드</div>
       <div v-else-if="done">다운로드 완료!</div>
       <div v-else>
         <div v-if="!progress">다운로드를 준비중이에요</div>
@@ -51,8 +51,8 @@ export default {
       downloadSpeed: null,
       help: false,
       done: false,
-      filename: 'PoRA_1.0.2.exe',
-      torrentId: 'magnet:?xt=urn:btih:96beaa2595fc0b82d7bace61c750e15d189392fd&dn=Path+of+RubystarAshe+Setup+1.0.2.exe&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com',
+      filename: 'PoRA_1.0.3.exe',
+      torrentId: 'magnet:?xt=urn:btih:359f9b9ee45f583fa135702a779b6d6c3dba218b&dn=Path+of+RubystarAshe+Setup+1.0.3.exe&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com',
     }
   },
   methods: {
