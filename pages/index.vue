@@ -9,7 +9,7 @@
   </div>
   <div class="download_area" @click="download()">
     <div class="download_descriptions">
-      <div class="download_description">현재 버전: 1.0.4</div>
+      <div class="download_description">현재 버전: 1.0.5</div>
       <div class="download_description">- 아이템에 Ctrl+C 키를 눌러 시세를 즉시 확인할 수 있어요</div>
       <div class="download_description">- 거래 메시지가 오면 애드온으로 알려줘요</div>
       <div class="download_description">- 경매장에서 거래 메시지를 복사하면 손쉽게 붙여넣을 수 있어요.</div>
@@ -24,7 +24,7 @@
       <div class="download_description">이 애드온을 다운로드 하여 사용시 위의 모든 사항에 동의하는것으로 간주합니다.</div>
     </div>
     <div class="download_btn_area">
-      <div v-if="!onstart">1.0.4 다운로드</div>
+      <div v-if="!onstart">1.0.5 다운로드</div>
       <div v-else-if="done">다운로드 완료!</div>
       <div v-else>
         <div v-if="!progress">다운로드를 준비중이에요</div>
@@ -51,8 +51,8 @@ export default {
       downloadSpeed: null,
       help: false,
       done: false,
-      filename: 'PoRA_1.0.4.exe',
-      torrentId: 'magnet:?xt=urn:btih:d6f2ab4ecb29ddac35ff9d21a2491fe516d58547&dn=Path+of+RubystarAshe+Setup+1.0.4.exe&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com',
+      filename: 'PoRA_1.0.5.exe',
+      torrentId: 'magnet:?xt=urn:btih:48bacb9226afe04bdc48800b18bcaad78e3271e2&dn=Path+of+RubystarAshe+Setup+1.0.5.exe&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com',
     }
   },
   methods: {
