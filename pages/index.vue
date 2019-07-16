@@ -9,14 +9,15 @@
   </div>
   <div class="download_area" @click="download()">
     <div class="download_descriptions">
-      <div class="download_description">현재 버전: 1.0.5</div>
+      <div class="download_description">현재 버전: 1.1.0a</div>
       <div class="download_description">- 아이템에 Ctrl+C 키를 눌러 시세를 즉시 확인할 수 있어요</div>
       <div class="download_description">- 거래 메시지가 오면 애드온으로 알려줘요</div>
       <div class="download_description">- 경매장에서 거래 메시지를 복사하면 손쉽게 붙여넣을 수 있어요.</div>
       <div class="download_description">- PoRA를 사용하는 유저 끼리라면 카카오 유저이더라도 거래 애드온에 표시되요</div>
       <div class="download_description">- 창고의 가치를 한눈에 파악할 수 있어요</div>
       <div class="download_description">- 비싼 아이템을 획득할시 자동으로 알려줘요</div>
-      <div class="download_description">- F1 ~ F12 키와 Ctrl + 마우스 휠 로 손쉽게 창고를 선택할 수 있어요</div>
+      <div class="download_description">- Ctrl + 마우스 휠 로 손쉽게 창고를 선택할 수 있어요</div>
+      <div class="download_description">- Ctrl + F 키를 통해 검색 오버레이를 이용할 수 있어요(현재 커런시 검색 기능만 가능)</div>
       <div class="download_description">이 애드온은 가계부 기능을 위해 유저의 총 카오스 오브 개수에 대한 정보를 수집합니다.</div>
       <div class="download_description">이 애드온은 거래 애드온을 위해 유저의 계정명과 캐릭터명, 최근 이용한 캐릭터명을 수집합니다.</div>
       <div class="download_description">이 애드온은 서버 성능과 유지에 대한 문제로, 유저의 업로드 자원을 일부 사용할 수 있습니다.</div>
@@ -24,7 +25,7 @@
       <div class="download_description">이 애드온을 다운로드 하여 사용시 위의 모든 사항에 동의하는것으로 간주합니다.</div>
     </div>
     <div class="download_btn_area">
-      <div v-if="!onstart">1.0.5 다운로드</div>
+      <div v-if="!onstart">1.1.0a 다운로드</div>
       <div v-else-if="done">다운로드 완료!</div>
       <div v-else>
         <div v-if="!progress">다운로드를 준비중이에요</div>
@@ -35,8 +36,8 @@
   </div>
   <div class="help_area" v-if="help && !progress && !done">
     <div class="help_box">
-      <div>다운로드가 진행이 안되시면 연락주세요!</div>
-      <div>디스코드 루비스타#4609</div>
+      <div>다운로드가 진행이 안되시면 아래 링크로 다운로드 받아보세요!</div>
+      <a href="https://firebasestorage.googleapis.com/v0/b/spinel-2019.appspot.com/o/Path%20of%20RubystarAshe%20Setup%201.1.0-a.exe?alt=media&token=b8370316-c798-4bee-aff3-33cd0fc1b6aa">서버를 통한 다운로드</a>
     </div>
   </div>
 </div>
@@ -51,8 +52,8 @@ export default {
       downloadSpeed: null,
       help: false,
       done: false,
-      filename: 'PoRA_1.0.5.exe',
-      torrentId: 'magnet:?xt=urn:btih:48bacb9226afe04bdc48800b18bcaad78e3271e2&dn=Path+of+RubystarAshe+Setup+1.0.5.exe&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com',
+      filename: 'PoRA_1.1.0a.exe',
+      torrentId: 'magnet:?xt=urn:btih:e436fac00f78a8a7a12e19ed57e7219a384ebc64&dn=Path+of+RubystarAshe+Setup+1.1.0-a.exe&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com',
     }
   },
   methods: {
@@ -201,9 +202,9 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  pointer-events: none;
 }
 .help_box {
+  position: fixed;
   background: rgba(30,20,30,.9);
   color: #ffbcbc;
   display: flex;
@@ -214,6 +215,7 @@ body {
   padding: calc(1vh + 1vw);
   font-size: calc(1vh + 1vw);
   border-radius: calc(1vh + 1vw);
+  z-index: 10000;
 }
 .help_box>div {
   margin: calc(.3vh + .3vw);
