@@ -9,7 +9,7 @@
   </div>
   <div class="download_area" @click="download()">
     <div class="download_descriptions">
-      <div class="download_description">현재 버전: 1.1.0a</div>
+      <div class="download_description">현재 버전: 1.1.0b</div>
       <div class="download_description">- 아이템에 Ctrl+C 키를 눌러 시세를 즉시 확인할 수 있어요</div>
       <div class="download_description">- 거래 메시지가 오면 애드온으로 알려줘요</div>
       <div class="download_description">- 경매장에서 거래 메시지를 복사하면 손쉽게 붙여넣을 수 있어요.</div>
@@ -25,7 +25,7 @@
       <div class="download_description">이 애드온을 다운로드 하여 사용시 위의 모든 사항에 동의하는것으로 간주합니다.</div>
     </div>
     <div class="download_btn_area">
-      <div v-if="!onstart">1.1.0a 다운로드</div>
+      <div v-if="!onstart">1.1.0b 다운로드</div>
       <div v-else-if="done">다운로드 완료!</div>
       <div v-else>
         <div v-if="!progress">다운로드를 준비중이에요</div>
@@ -37,7 +37,7 @@
   <div class="help_area" v-if="help && !progress && !done">
     <div class="help_box">
       <div>다운로드가 진행이 안되시면 아래 링크로 다운로드 받아보세요!</div>
-      <a href="https://firebasestorage.googleapis.com/v0/b/spinel-2019.appspot.com/o/Path%20of%20RubystarAshe%20Setup%201.1.0-a.exe?alt=media&token=b8370316-c798-4bee-aff3-33cd0fc1b6aa">서버를 통한 다운로드</a>
+      <a href="https://firebasestorage.googleapis.com/v0/b/spinel-2019.appspot.com/o/Path%20of%20RubystarAshe%20Setup%201.1.0-b.exe?alt=media&token=44cbd37b-b191-4694-a26f-29508993fe0b">서버를 통한 다운로드</a>
     </div>
   </div>
 </div>
@@ -52,8 +52,8 @@ export default {
       downloadSpeed: null,
       help: false,
       done: false,
-      filename: 'PoRA_1.1.0a.exe',
-      torrentId: 'magnet:?xt=urn:btih:e436fac00f78a8a7a12e19ed57e7219a384ebc64&dn=Path+of+RubystarAshe+Setup+1.1.0-a.exe&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com',
+      filename: 'PoRA_1.1.0b.exe',
+      torrentId: 'magnet:?xt=urn:btih:e1315538a10387abe00e17d8e6140a9d2da5f570&dn=Path+of+RubystarAshe+Setup+1.1.0-b.exe&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com',
     }
   },
   methods: {
